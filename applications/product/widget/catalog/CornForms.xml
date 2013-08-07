@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/widget-form.xsd">
+<form name="StoreIncoming" type="single" target="createStoreIncoming" header-row-style="header-row" default-table-style="basic-table">
+<field name="" widget-area-style="incoloredtext" widget-style="bold"><display type="text" default-value="Store Incoming"></display></field>
+     <field name="itemName"><text/></field>
+     <field name="date" position="2"><date-time/> </field>
+     <field name="uom">
+	     <drop-down allow-empty="false">
+		     <option key="kg" description="KGs"/>         
+		     <option key="liter" description="Liters"/>
+		     <option key="ton" description="Tons"/>
+		     <option key="number" description="Numbers"/>
+		     <option key="boxes" description="Boxes"/>
+	     </drop-down>
+     </field>
+     <field name="vehicle" position="2"><text/> </field>
+     <field name="qty" ><text/> </field>
+     <field name="rate" position="2"><text/> </field>
+     <field name="submitButton" title="${uiLabelMap.Submit}" widget-style="smallSubmit"><submit button-type="button"/></field>
+</form>
+
+<form name="StoreOutgoing" type="single" target="createStoreOutgoing" header-row-style="header-row" default-table-style="basic-table">
+<field name="" widget-area-style="outcoloredtext"><display type="text" default-value="Store Outgoing"></display></field>
+     <field name="itemName"><text/></field>
+     <field name="date" position="2"><date-time/> </field>
+     <field name="uom">
+	     <drop-down allow-empty="false">
+		     <option key="kg" description="KGs"/>         
+		     <option key="liter" description="Liters"/>
+		     <option key="ton" description="Tons"/>
+		     <option key="number" description="Numbers"/>
+		     <option key="boxes" description="Boxes"/>
+	     </drop-down>
+     </field>
+     <field name="vehicle" position="2"><text/> </field>
+     <field name="qty"><text/> </field>
+     <field name="rate" position="2"><text/> </field>
+     <field name="submitButton" title="${uiLabelMap.Submit}" widget-style="smallSubmit"><submit button-type="button"/></field>
+</form>
+<form name="StoreItem" type="single" target="createStoreItem" header-row-style="header-row" default-table-style="basic-table">
+<field name="Mode"><display type="text" default-value="Create Store Item"></display></field>
+     <field name="itemName"><text/></field>
+     <field name="uom">
+	     <drop-down allow-empty="false">
+		     <option key="kg" description="KGs"/>         
+		     <option key="liter" description="Liters"/>
+		     <option key="ton" description="Tons"/>
+		     <option key="number" description="Numbers"/>
+		     <option key="boxes" description="Boxes"/>
+	     </drop-down>
+     </field>
+     <field name="submitButton" title="${uiLabelMap.Submit}" widget-style="smallSubmit"><submit button-type="button"/></field>
+</form>
+</forms>

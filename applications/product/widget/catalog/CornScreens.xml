@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screens xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/widget-screen.xsd">
+	<screen name="main">
+		<section>
+		<actions>
+		<set field="headerItem" value="StoreIncoming"/>
+		</actions>
+			<widgets>
+				<decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+					<decorator-section name="body">
+						<!-- <label text="Stores Incoming" style="storeboxbottom"/> -->
+						<screenlet title="Store Incoming">
+						<include-form name="StoreIncoming" location="component://product/widget/catalog/CornForms.xml"></include-form>
+						</screenlet>
+					</decorator-section>
+				</decorator-screen>
+			</widgets>
+		</section>
+	</screen>
+	<screen name="StoreOutgoing">
+		<section>
+		<actions>
+		<set field="headerItem" value="StoreOutgoing"/>
+		</actions>
+			<widgets>
+				<decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+					<decorator-section name="body">
+						<!-- <label text="Stores Incoming" style="storeboxbottom"/> -->
+						<screenlet title="Store Out Going">
+						<include-form name="StoreOutgoing" location="component://product/widget/catalog/CornForms.xml"></include-form>
+						</screenlet>
+					</decorator-section>
+				</decorator-screen>
+			</widgets>
+		</section>
+	</screen>
+	<screen name="StoreItem">
+		<section>
+		<actions>
+		<set field="headerItem" value="StoreItem"/>
+		</actions>
+			<widgets>
+				<decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+					<decorator-section name="body">
+						<!-- <label text="Stores Incoming" style="storeboxbottom"/> -->
+						<screenlet title="Create Store Item">
+						<include-form name="StoreItem" location="component://product/widget/catalog/CornForms.xml"></include-form>
+						</screenlet>
+					</decorator-section>
+				</decorator-screen>
+			</widgets>
+		</section>
+	</screen>
+</screens>

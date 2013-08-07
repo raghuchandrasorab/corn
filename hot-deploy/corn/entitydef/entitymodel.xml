@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entitymodel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/entitymodel.xsd">
+    <title>Corn Entity</title>
+    <description>None</description>
+    <version>1.0</version>
+    <entity entity-name="PartyResume"
+            package-name="org.ofbiz.humanres.ability"
+            title="Resume Entity">
+      <field name="resumeId" type="id-ne"></field>
+      <field name="partyId" type="id-ne"></field>
+      <field name="contentId" type="id"></field>
+      <field name="resumeDate" type="date-time"></field>
+      <field name="resumeText" type="long-varchar"></field>
+      <prim-key field="resumeId"/>
+      <relation type="one" fk-name="PARTY_RSME_PRTY" rel-entity-name="Party">
+        <key-map field-name="partyId"/>
+      </relation>
+      <relation type="one-nofk" fk-name="PARTY_RSME_CNT" rel-entity-name="Content">
+          <key-map field-name="contentId"/>
+      </relation>
+    </entity>
+    <entity entity-name="PartySkill"
+            package-name="org.ofbiz.humanres.ability"
+            title="Party Skill Entity">
+      <field name="partyId" type="id-ne"></field>
+      <field name="skillTypeId" type="id-ne"></field>
+      <field name="yearsExperience" type="numeric"></field>
+      <field name="rating" type="numeric"></field>
+      <field name="skillLevel" type="numeric"></field>
+      <field name="startedUsingDate" type="date-time"></field>
+      <prim-key field="partyId"/>
+      <prim-key field="skillTypeId"/>
+      <relation type="one" fk-name="PARTY_SKLL_PRTY" rel-entity-name="Party">
+        <key-map field-name="partyId"/>
+      </relation>
+      <relation type="one" fk-name="PARTY_SKLL_SKTP" rel-entity-name="SkillType">
+        <key-map field-name="skillTypeId"/>
+      </relation>
+    </entity>
+</entitymodel>

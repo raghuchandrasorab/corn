@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screens xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/widget-screen.xsd">
+	<screen name="main">
+		<section>
+		<actions>
+		<set field="headerItem" value="StoreIncoming"/>
+		</actions>
+			<widgets>
+				<decorator-screen name="CommonCornDecorator" location="${parameters.mainDecoratorLocation}">
+					<decorator-section name="body">
+						<!-- <label text="Stores Incoming" style="storeboxbottom"/> -->
+						<screenlet >
+						<include-form name="StoreIncoming" location="component://corn/widget/CornForms.xml"></include-form>
+						</screenlet>
+					</decorator-section>
+				</decorator-screen>
+			</widgets>
+		</section>
+	</screen>
+	<screen name="personForm">
+        <section>
+            <actions>
+                <set field="headerItem" value="personForm"/>
+                <set field="titleProperty" value="PageTitlePracticePersonForm"/>
+                <entity-condition entity-name="Person" list="persons"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="CommonCornDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <label text="Person List" style="h2"/>
+                        <include-form name="ListPersons" location="component://corn/widget/CornForms.xml"></include-form>
+                    </decorator-section>
+                </decorator-screen>       
+            </widgets>
+        </section>
+</screen>
+</screens>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<property key="CornApplication">
+    <value xml:lang="en">This is first    practice</value>
+</property>
+<property key="CornCompanyName">
+    <value xml:lang="en">OFBiz: Practice</value>
+</property>
+</resource>
