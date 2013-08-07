@@ -77,6 +77,12 @@ under the License.
       </relation>
     </entity>
     
+    <entity entity-name="StoreItem" package-name="com.corn.stores" title="Store Item">
+      <field name="itemName" type="long-varchar"></field>
+      <field name="uom" type="long-varchar"></field>
+      <prim-key field="itemName"/>
+    </entity>
+    
     <!--  here my code ends -->
     
     <entity entity-name="ProdCatalog"

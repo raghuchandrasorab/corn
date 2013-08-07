@@ -683,6 +683,25 @@ under the License.
     <!-- ======================================== -->
     <!-- Product Category Services -->
     <!-- ======================================== -->
+    
+    <!-- Corn code starts here -->
+    
+    <service name="createStoreIncoming" default-entity-name="StoreIncoming" engine="simple"
+                location="component://product/script/org/ofbiz/product/category/CategoryServices.xml" invoke="createStoreIncoming" auth="true">
+        <description>Create an ProductCategory</description>
+        <auto-attributes include="pk" mode="INOUT" optional="true"/>
+        <auto-attributes include="nonpk" mode="IN" optional="true"/>
+    </service>
+    
+    <service name="createStoreItem" default-entity-name="StoreItem" engine="simple"
+                location="component://product/script/org/ofbiz/product/category/CategoryServices.xml" invoke="createStoreItem" auth="true">
+        <description>Create a Store Item</description>
+        <auto-attributes include="pk" mode="INOUT" optional="true"/>
+        <auto-attributes include="nonpk" mode="IN" optional="true"/>
+    </service>
+    
+    <!-- Corn code ends -->
+    
     <service name="createProductCategory" default-entity-name="ProductCategory" engine="simple"
                 location="component://product/script/org/ofbiz/product/category/CategoryServices.xml" invoke="createProductCategory" auth="true">
         <description>Create an ProductCategory</description>

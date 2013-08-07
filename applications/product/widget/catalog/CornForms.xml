@@ -3,7 +3,14 @@
         xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/widget-form.xsd">
 <form name="StoreIncoming" type="single" target="createStoreIncoming" header-row-style="header-row" default-table-style="basic-table">
 <field name="" widget-area-style="incoloredtext" widget-style="bold"><display type="text" default-value="Store Incoming"></display></field>
-     <field name="itemName"><text/></field>
+     <field name="incomingId"><hidden/></field>
+     <field name="itemName">
+     <drop-down>
+     <entity-options description="${itemName}" entity-name="StoreItem">
+     <entity-order-by field-name="itemName"/>
+     </entity-options>
+     </drop-down>
+     </field>
      <field name="date" position="2"><date-time/> </field>
      <field name="uom">
 	     <drop-down allow-empty="false">

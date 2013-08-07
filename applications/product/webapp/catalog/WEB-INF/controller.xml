@@ -42,7 +42,17 @@ under the License.
         <security https="true" auth="true"/>
         <response name="success" type="view" value="StoreItem"/>
     </request-map>
-    
+    <request-map uri="createStoreIncoming">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="createStoreIncoming"/>
+        <!-- <event type="groovy" path="component://product/webapp/catalog/WEB-INF/actions/" invoke="incomingStores.groovy"/> -->
+        <response name="success" type="view" value="StoreItem"/>
+    </request-map>
+    <request-map uri="createStoreItem">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="createStoreItem"/>
+        <response name="success" type="view" value="StoreItem"/>
+    </request-map>
     
     <view-map name="main" type="screen" page="component://product/widget/catalog/CornScreens.xml#main"/>
     <view-map name="StoreOutgoing" type="screen" page="component://product/widget/catalog/CornScreens.xml#StoreOutgoing"/>

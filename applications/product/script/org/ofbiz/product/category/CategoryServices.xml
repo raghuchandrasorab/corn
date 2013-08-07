@@ -24,7 +24,35 @@ under the License.
     <!-- ================================================================ -->
     <!-- ProductCategory Services -->
     <!-- ================================================================ -->
-
+	
+	
+	<!-- Corn code starts here -->
+	
+	<simple-method method-name="createStoreIncoming"
+		short-description="store incoming">
+		<make-value value-field="newEntity" entity-name="StoreIncoming" />
+		<set-nonpk-fields map="parameters" value-field="newEntity" />
+		<if-empty field="parameters.incomingId">
+			<set field="newEntity.incomingId"  value="1"/>
+			<else>
+			<set field="newEntity.incomingId"  value="${parameters.incomingId}+1"/>
+			</else>		
+		</if-empty>
+		<create-value value-field="newEntity" />
+	</simple-method>
+	
+	<simple-method method-name="createStoreItem"
+		short-description="create Store Item">
+		<make-value value-field="newEntity" entity-name="StoreItem" />
+		<set-pk-fields map="parameters" value-field="newEntity"/>
+		<set-nonpk-fields map="parameters" value-field="newEntity" />
+		<create-value value-field="newEntity" />
+	</simple-method>
+	
+	<!-- Corn code ends -->
+	
+	
+	
     <simple-method method-name="createProductCategory" short-description="Create an ProductCategory">
         <check-permission permission="CATALOG" action="_CREATE">
             <alt-permission permission="CATALOG_ROLE" action="_CREATE"/>
